@@ -2,7 +2,7 @@
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
 
-double ShowDifference(double[] array)
+void ShowDifference(double[] array)
 {
     double max = array[0];
     double min = array[0];
@@ -12,7 +12,7 @@ double ShowDifference(double[] array)
         if(array[i] < min) min = array[i];
     }
     double diff = Math.Round(max - min, 2);
-    return diff;
+    Console.WriteLine($"{max} - {min} = {diff}");
 }
 
 double[] GenerateArray(int length, double start, double end)
@@ -26,4 +26,5 @@ double[] GenerateArray(int length, double start, double end)
 }
 
 double[] array = GenerateArray(10, 1, 99);
-Console.WriteLine($"[{String.Join("; ", array)}] => {ShowDifference(array)}");
+Console.Write($"[{String.Join("; ", array)}] => ");
+ShowDifference(array);
